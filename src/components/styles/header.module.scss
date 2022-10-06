@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(1, 19, 10);
-  font-family: 'Bebas Neue', cursive;
-
+  font-family: "Bebas Neue", cursive;
 }
 
 .logo {
@@ -24,13 +23,103 @@
   background-size: contain;
   margin: 0 auto;
 }
-
-.barContent {
+.navigation {
+  width: 100%;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: space-around;
-  width: 88%;
-  color: rgb(1, 19, 10);
-  font-size: 1.7rem;
-  letter-spacing: 0.1em;
+  position: relative;
+  padding: 0.5rem 0rem;
+  color: black;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+}
+
+.navigationMenu {
+  margin-left: 0 auto;
+
+  ul {
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: rgb(1, 19, 10);
+    font-size: 2.4rem;
+    font-weight: 590;
+  }
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(1, 19, 10);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+.hamburger:hover {
+  background-color: rgb(13, 77, 45);
+}
+
+@media screen and (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+  .navigationMenu ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    margin-left: 10px;
+    transform: scale(0.7);
+  }
+  .bar {
+    background-image: none;
+  }
+  .navigationMenu ul {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+  }
+  .navigationMenu li {
+    text-align: center;
+    margin: 0;
+  }
+  .navigationMenu li a {
+    color: black;
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+  }
+  .navigationMenu li:hover {
+    background-color: #eee;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navigationMenu.expanded ul {
+    display: block;
+  }
 }
