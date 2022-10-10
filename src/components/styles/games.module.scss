@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+  background-color: #11001E;
+}
+
+.title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-right: 3rem;
+}
+
+.animation {
+  height: 250px;
+  width: 250px;
+}
