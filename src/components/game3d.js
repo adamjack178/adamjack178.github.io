@@ -1,15 +1,22 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "react-three-fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useAnimations } from "@react-three/drei";
 
 function Model(props) {
-  const { scene } = useGLTF("/game.glb");
-  return <primitive object={scene} />;
+  const group = useRef();
+  const { scene, animations } = useGLTF("/cart.glb");
+  const { actions } = useAnimations(animations, group);
+  useEffect(() => {
+    console.log(actions);
+    actions.CubeAction.play();
+  });
+  return <primitive ref={group} object={scene} dispose={null} />;
 }
 
 export default function Game3d() {
   return (
-    <Canvas pixelRatio={[1, 2]} camera={{ position: [-10, 15, 15], fov: 7 }}>
+    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 15, 15], fov: 5 }}>
       <Suspense fallback={null}>
         <ambientLight intensity={1} />
         <Model />
