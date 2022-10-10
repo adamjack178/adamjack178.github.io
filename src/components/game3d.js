@@ -9,14 +9,14 @@ function Model(props) {
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
     console.log(actions);
-    actions.CubeAction.play();
+    actions.Girar.play();
   });
   return <primitive ref={group} object={scene} dispose={null} />;
 }
 
 export default function Game3d() {
   return (
-    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 15, 15], fov: 5 }}>
+    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 0, 15], fov: 5 }}>
       <Suspense fallback={null}>
         <ambientLight intensity={1} />
         <Model />
