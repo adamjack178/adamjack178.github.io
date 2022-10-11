@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+  background-color: transparent;
+}
+
+.title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-right: 3rem;
+}
+
+.gameContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
