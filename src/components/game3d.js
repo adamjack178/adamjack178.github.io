@@ -16,7 +16,7 @@ function Model(props) {
 
 export default function Game3d() {
   return (
-    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 0, 15], fov: 5 }}>
+    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 0, 15], fov: 4 }}>
       <Suspense fallback={null}>
         <ambientLight intensity={1} />
         <Model />

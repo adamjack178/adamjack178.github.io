@@ -13,9 +13,30 @@
   margin-right: 3rem;
 }
 
-.gameContainer{
+.gamesContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
 }
+
+.game {
+  height: 100px;
+  width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    margin-top: 5rem;
+  }
+  .gamesContainer{
+    margin-top: 3rem;
+  }
+  .game {
+    height: 70px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+  }
+}
+

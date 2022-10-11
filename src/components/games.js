@@ -8,7 +8,9 @@ export default function Games() {
     <div className={gameStyles.container}>
       <h2 className={gameStyles.title}>My Games</h2>
       <div className={gameStyles.gamesContainer}>
-        <Game3d />
+        <div className={gameStyles.game}>
+          <Game3d />
+        </div>
       </div>
     </div>
   );
