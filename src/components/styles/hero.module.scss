@@ -44,11 +44,12 @@
   justify-content: flex-end;
   margin-top: 3rem;
   margin-right: 10rem;
-  gap: 2rem;
+  gap: 4rem;
   width: 100%;
 }
 
 .console {
+  margin-top: 2rem;
   height: 22rem;
   width: 17rem;
 }
@@ -75,7 +76,7 @@
     padding: 0;
     margin: 0;
   }
-  
+
   .btnContainer {
     display: flex;
     flex-direction: column;
@@ -95,7 +96,7 @@
     outline: inherit;
     width: fit-content;
 
-    &.getOnBtn{
+    &.getOnBtn {
       background-color: rgb(10, 126, 10);
       font-size: 3rem;
       padding: 0.075em 1.5em;
@@ -129,7 +130,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .console{
+  .console {
     height: 18rem;
     width: 17rem;
   }
