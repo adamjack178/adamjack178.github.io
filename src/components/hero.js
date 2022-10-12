@@ -1,7 +1,7 @@
 import React from "react";
 
+import Console3d from "./console3d";
 import heroStyles from "./styles/hero.module.scss";
-import console from "./assets/boy.png";
 
 export default function Hero() {
   return (
@@ -21,11 +21,13 @@ export default function Hero() {
 
       <div className={heroStyles.mainContent}>
         <div className={heroStyles.console}>
-          <img src={console} alt="station3 gaming console" />
+          <Console3d />
         </div>
         <div className={heroStyles.heroText}>
-          <h1>WEB3 CONSOLE</h1>
-          <p>Gaming redesigned</p>
+          <h1>Bag Boy</h1>
+          <p>
+            Web3 <br /> Video Game Console
+          </p>
           <div className={heroStyles.btnContainer}>
             <button className={heroStyles.getOnBtn}>GET ON</button>
             <button className={heroStyles.getCheatsBtn}>GET $CHEATS</button>

@@ -5,20 +5,23 @@ import { useAnimations } from "@react-three/drei";
 
 function Model(props) {
   const group = useRef();
-  const { scene, animations } = useGLTF("/cart.glb");
+  const { scene, animations } = useGLTF("/console.glb");
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
     console.log(actions);
-    actions.Girar.play();
+    // actions.girar.play();
   });
   return <primitive ref={group} object={scene} dispose={null} />;
 }
 
-export default function Game3d() {
+export default function Console3d() {
   return (
-    <Canvas pixelratio={[1, 2]} camera={{ position: [-10, 0, 15], fov: 4 }}>
+    <Canvas
+      pixelratio={[1, 2]}
+      camera={{ position: [-10, 0, 15], fov: 6 }}
+      onCreated={({ gl }) => {gl.physicallyCorrectLights = true}}
+    >
       <Suspense fallback={null}>
-        <ambientLight intensity={1} />
         <Model />
         <OrbitControls />
       </Suspense>
