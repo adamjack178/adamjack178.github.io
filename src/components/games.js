@@ -9,7 +9,7 @@ export default function Games() {
       <h2 className={gameStyles.title}>My Games</h2>
       <div className={gameStyles.gamesContainer}>
         <div className={gameStyles.game}>
-          <Game3d />
+          <Game3d animate={1} file={"/cart.glb"} />
         </div>
       </div>
     </div>
