@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 30rem;
+  gap: 3rem;
+  background-color: #11001e;
+  border: 2px solid rgba(255, 255, 255, 0.747);
+  border-radius: 10px;
+  font-family: "Bebas Neue", cursive;
+  padding: 1em;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 2em;
+  width: 100%;
+
+  h2 {
+    background-color: rgba(121, 121, 121, 0.329);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 30px;
+    width: 50%;
+    margin: 0;
+
+    &:hover {
+      background-color: #11001e;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.objectContainer {
+  height: 12rem;
+  width: 10.5rem;
+}
+
+.btnContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+button {
+  background: none;
+  color: #fff;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: fit-content;
+
+  &.buyBtn {
+    background-color: rgb(10, 126, 10);
+    font-size: 2rem;
+    padding: 0.075em 1.5em;
+    border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+    &:hover {
+      border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
+    }
+  }
+
+  &.closeBtn {
+    background-color: rgb(233, 35, 35);
+    font-size: 2rem;
+    padding: 0.075em 1em;
+    border-bottom: solid 0.19em rgb(122, 17, 17);
+
+    &:hover {
+      border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 18.5rem;
+  }
+}
+
