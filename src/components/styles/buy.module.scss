@@ -80,3 +80,10 @@ button {
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 18.5rem;
+  }
+}
+
