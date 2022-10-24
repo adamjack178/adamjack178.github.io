@@ -43,9 +43,6 @@ export default function Header() {
                 <Link to="/">HOME</Link>
               </li>
               <li>
-                <Link to="/consoles">CONSOLES</Link>
-              </li>
-              <li>
                 <Link to="/games">GAMES</Link>
               </li>
               <li>

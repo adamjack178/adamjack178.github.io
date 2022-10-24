@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Hero from "./components/hero";
-import Games from "./components/games";
 import "./App.css";
 
 function App() {
@@ -13,11 +12,10 @@ function App() {
           path="/"
           element={
             <>
-              <Hero /> <Games />
+              <Hero />
             </>
           }
         />
-        <Route path="/consoles" element={<></>} />
         <Route path="/games" element={<></>} />
         <Route path="/publishers" element={<></>} />
         <Route path="/roadmap" element={<></>} />
