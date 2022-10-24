@@ -28,7 +28,7 @@ export default function Console3d(props) {
     >
       <Suspense fallback={null}>
         <Model animate={animate} file={file} />
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
       </Suspense>
     </Canvas>
   );

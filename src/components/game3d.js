@@ -23,7 +23,7 @@ export default function Game3d(props) {
       <Suspense fallback={null}>
         <ambientLight intensity={1} />
         <Model animate={animate} file={file} />
-        <OrbitControls />
+        <OrbitControls enableZoom={false}/>
       </Suspense>
     </Canvas>
   );
