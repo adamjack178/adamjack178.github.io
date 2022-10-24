@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Games from "./components/games";
@@ -7,10 +8,30 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Games />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero /> <Games />
+            </>
+          }
+        />
+        <Route path="/consoles" element={<></>} />
+        <Route path="/games" element={<></>} />
+        <Route path="/publishers" element={<></>} />
+        <Route path="/roadmap" element={<></>} />
+      </Routes>
     </>
   );
 }
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+};
+
+export default AppWrapper;

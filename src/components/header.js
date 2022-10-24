@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import headerStyles from "./styles/header.module.scss";
 import logo from "./assets/logo.png";
@@ -39,19 +40,19 @@ export default function Header() {
           >
             <ul>
               <li>
-                <a href="/home">HOME</a>
+                <Link to="/">HOME</Link>
               </li>
               <li>
-                <a href="/about">CONSOLES</a>
+                <Link to="/consoles">CONSOLES</Link>
               </li>
               <li>
-                <a href="/contact">GAMES</a>
+                <Link to="/games">GAMES</Link>
               </li>
               <li>
-                <a href="/contact">PUBLISHERS</a>
+                <Link to="/publishers">PUBLISHERS</Link>
               </li>
               <li>
-                <a href="/contact">ROADMAP</a>
+                <Link to="/roadmap">ROADMAP</Link>
               </li>
             </ul>
           </div>
