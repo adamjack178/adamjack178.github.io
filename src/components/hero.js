@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Popup from "reactjs-popup";
+import Typewriter from "typewriter-effect";
 
 import Console3d from "./console3d";
 import Buy from "./buy";
@@ -10,23 +11,46 @@ export default function Hero() {
   const closeTooltip = () => ref.current.close();
   return (
     <div className={heroStyles.container}>
-      <div className={heroStyles.trending}>
-        <h2>On Fire 🔥</h2>
-        <p>
-          #1 The Legend of Emin <span>🎮</span>
-        </p>
-        <p>
-          #2 Super Degen Bros <span>🎮</span>
-        </p>
-        <p>
-          #3 Ape & Me <span>🎮</span>
-        </p>
+      <div className={heroStyles.typewriter}>
+        <Typewriter
+          options={{
+            strings: [
+              "Welcome to the Station3!",
+              "Game as Service",
+              "Play!",
+              "Enjoy!",
+              "Get your pass!",
+            ],
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 3,
+            delay: 70,
+          }}
+        />
       </div>
 
       <div className={heroStyles.mainContent}>
         <div className={heroStyles.console}>
           <Console3d file={"/console.glb"} />
+          <div className={heroStyles.typewriterMobile}>
+            <Typewriter
+              options={{
+                strings: [
+                  "Welcome to the Station3!",
+                  "Game as Service",
+                  "Play!",
+                  "Enjoy!",
+                  "Get your pass!",
+                ],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 3,
+                delay: 70,
+              }}
+            />
+          </div>
         </div>
+
         <div className={heroStyles.heroText}>
           <h1>Bag Boy</h1>
           <p>
