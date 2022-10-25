@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Hero from "./components/hero";
+import Reel from "./components/reel"
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           element={
             <>
               <Hero />
+              <Reel />
             </>
           }
         />
