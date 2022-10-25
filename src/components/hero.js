@@ -12,15 +12,11 @@ export default function Hero() {
   return (
     <div className={heroStyles.container}>
       <div className={heroStyles.typewriter}>
+        <h1>Welcome to the STATION3</h1>
+        <h2>Game as a Service</h2>
         <Typewriter
           options={{
-            strings: [
-              "Welcome to the Station3!",
-              "Game as Service",
-              "Play!",
-              "Enjoy!",
-              "Get your pass!",
-            ],
+            strings: ["Play!", "Enjoy!", "Get your pass!"],
             autoStart: true,
             loop: true,
             deleteSpeed: 3,
