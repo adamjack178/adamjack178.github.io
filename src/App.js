@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Hero from "./components/hero";
-import Reel from "./components/reel"
+import Reel from "./components/reel";
+import Games from "./pages/games";
 import "./App.css";
 
 function App() {
@@ -18,7 +19,15 @@ function App() {
             </>
           }
         />
-        <Route path="/games" element={<></>} />
+        <Route
+          path="/games"
+          element={
+            <>
+              {" "}
+              <Games />{" "}
+            </>
+          }
+        />
         <Route path="/publishers" element={<></>} />
         <Route path="/roadmap" element={<></>} />
       </Routes>
