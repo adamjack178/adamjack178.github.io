@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #11001E;
+  background-color: #11001e;
   font-family: "Bebas Neue", cursive;
 }
 
@@ -53,9 +53,17 @@
     text-decoration: none;
     display: block;
     width: 100%;
-    color: #11001E;
+    color: #11001e;
     font-size: 2.4rem;
     font-weight: 590;
+  }
+  .link {
+    transition: ease-in-out background-color 250ms, ease-in-out color 350ms;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(233, 35, 35);
+    }
   }
 }
 
@@ -65,7 +73,7 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #11001E;
+  background-color: #11001e;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   position: absolute;

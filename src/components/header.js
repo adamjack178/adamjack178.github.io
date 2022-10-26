@@ -40,16 +40,24 @@ export default function Header() {
           >
             <ul>
               <li>
-                <Link to="/">HOME</Link>
+                <Link className={headerStyles.link} to="/">
+                  HOME
+                </Link>
               </li>
               <li>
-                <Link to="/games">GAMES</Link>
+                <Link className={headerStyles.link} to="/games">
+                  GAMES
+                </Link>
               </li>
               <li>
-                <Link to="/publishers">PUBLISHERS</Link>
+                <Link className={headerStyles.link} to="/publishers">
+                  PUBLISHERS
+                </Link>
               </li>
               <li>
-                <Link to="/roadmap">ROADMAP</Link>
+                <Link className={headerStyles.link} to="/roadmap">
+                  ROADMAP
+                </Link>
               </li>
             </ul>
           </div>
