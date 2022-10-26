@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #11001E;
+  background-color: #11001e;
   font-family: "Bebas Neue", cursive;
 }
 
@@ -17,7 +17,7 @@
   align-content: center;
   justify-content: space-between;
   align-self: center;
-  width: 70%;
+  width: 80%;
   background-image: url("../assets/bar.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -36,7 +36,7 @@
 }
 
 .navigationMenu {
-  margin-left: 0 auto;
+  margin: 0 auto;
 
   ul {
     display: flex;
@@ -53,9 +53,33 @@
     text-decoration: none;
     display: block;
     width: 100%;
-    color: #11001E;
+    color: #11001e;
     font-size: 2.4rem;
     font-weight: 590;
+  }
+  .link {
+    transition: ease-in-out background-color 250ms, ease-in-out color 350ms;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(233, 35, 35);
+    }
+  }
+}
+
+.connectBtn {
+  background-color: rgba(0, 0, 255, 0.336);
+  color: rgba(255, 255, 255, 0.733);
+  padding: 0;
+  margin-right: 2rem;
+  background-color: rgb(10, 126, 10);
+  font-size: 1.1rem;
+  padding: 0.3em 1em;
+  border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+  &:hover {
+    color: #fff;
+    border-bottom: solid 0.15em rgba(223, 223, 230, 0.808);
   }
 }
 
@@ -65,7 +89,7 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #11001E;
+  background-color: #11001e;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   position: absolute;
@@ -84,6 +108,9 @@
   }
   .navigationMenu ul {
     display: none;
+  }
+  .connectBtn {
+    margin-right: 5rem;
   }
 }
 

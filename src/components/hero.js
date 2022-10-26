@@ -63,7 +63,7 @@ export default function Hero() {
                 <Buy close={closeTooltip}></Buy>
               </span>
             </Popup>
-            <button className={heroStyles.getCheatsBtn}>GET $CHEATS</button>
+            {/* <button className={heroStyles.getCheatsBtn}>GET $CHEATS</button> */}
           </div>
         </div>
       </div>
