@@ -61,6 +61,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
+          <button className={headerStyles.connectBtn}>Connect Wallet</button>
         </nav>
       </div>
     </div>

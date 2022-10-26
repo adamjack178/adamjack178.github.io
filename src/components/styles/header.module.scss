@@ -17,7 +17,7 @@
   align-content: center;
   justify-content: space-between;
   align-self: center;
-  width: 70%;
+  width: 80%;
   background-image: url("../assets/bar.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -36,7 +36,7 @@
 }
 
 .navigationMenu {
-  margin-left: 0 auto;
+  margin: 0 auto;
 
   ul {
     display: flex;
@@ -67,6 +67,22 @@
   }
 }
 
+.connectBtn {
+  background-color: rgba(0, 0, 255, 0.336);
+  color: rgba(255, 255, 255, 0.733);
+  padding: 0;
+  margin-right: 2rem;
+  background-color: rgb(10, 126, 10);
+  font-size: 1.1rem;
+  padding: 0.3em 1em;
+  border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+  &:hover {
+    color: #fff;
+    border-bottom: solid 0.15em rgba(223, 223, 230, 0.808);
+  }
+}
+
 .hamburger {
   border: 0;
   height: 40px;
@@ -92,6 +108,9 @@
   }
   .navigationMenu ul {
     display: none;
+  }
+  .connectBtn {
+    margin-right: 5rem;
   }
 }
 
