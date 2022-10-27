@@ -9,6 +9,7 @@ export default function OwnGameCard(props) {
     <div className={ownGameStyles.card}>
       <Game3d animate={1} file={file} />
       <span>Gunners Game</span>
+      <button>PLAY</button>
     </div>
   );
 }
