@@ -1,0 +1,115 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  font-family: "Bebas Neue", cursive;
+}
+
+.mainContent {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 7rem;
+  padding: 2rem;
+  width: 80%;
+
+  h1 {
+    color: #fff;
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: #f72359;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.712);
+    font-size: 1.4rem;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  button {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #0a7e50;
+    padding: 1em 3em;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 100px;
+  }
+  button span {
+    position: relative;
+    pointer-events: none;
+  }
+  button::before {
+    --size: 0;
+    content: "";
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, #42ca94, transparent);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+  button:hover::before {
+    --size: 400px;
+  }
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 75%;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.712);
+    font-size: 1.2rem;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      font-size: 3.4rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
