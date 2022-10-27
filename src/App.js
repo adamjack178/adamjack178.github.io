@@ -3,7 +3,9 @@ import Header from "./components/header";
 import Hero from "./components/hero";
 import Reel from "./components/reel";
 import Games from "./pages/games";
+import Publishers from "./pages/publishers";
 import "./App.css";
+
 
 function App() {
   return (
@@ -28,7 +30,15 @@ function App() {
             </>
           }
         />
-        <Route path="/publishers" element={<></>} />
+        <Route
+          path="/publishers"
+          element={
+            <>
+              {" "}
+              <Publishers />{" "}
+            </>
+          }
+        />
         <Route path="/roadmap" element={<></>} />
       </Routes>
     </>
