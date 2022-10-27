@@ -8,10 +8,21 @@
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.466);
   font-family: "Bebas Neue", cursive;
-  cursor: pointer;
 
   span {
-      color: rgba(255, 255, 255, 0.527);
-      letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.527);
+    letter-spacing: 3px;
+  }
+
+  button {
+    background-color: #0a7e50;
+    font-size: 0.9rem;
+    padding: 0.075em 1em;
+    margin-top: 1rem;
+    border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+    &:hover {
+      border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
+    }
   }
 }
