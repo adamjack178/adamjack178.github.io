@@ -13,6 +13,14 @@
     color: rgba(255, 255, 255, 0.527);
     letter-spacing: 3px;
   }
+
+  h3 {
+    color: #e84142;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+  }
 }
 
 .bottom {
@@ -20,12 +28,8 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  width: 80%;
-
-  h3 {
-    color: #e84142;
-    font-size: 0.9rem;
-  }
+  width: 90%;
+  margin-top: 1rem;
 
   button {
     background-color: #0a7e50;
@@ -35,6 +39,9 @@
 
     &:hover {
       border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
+    }
+    &.info {
+      background-color: rgb(150, 147, 147);
     }
   }
 }
