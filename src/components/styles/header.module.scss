@@ -58,10 +58,9 @@
     font-weight: 590;
   }
   .link {
-    transition: ease-in-out background-color 250ms, ease-in-out color 350ms;
-
     &:hover {
       cursor: pointer;
+      animation: bounce 1s;
       color: #0a7e50;
     }
   }
@@ -150,5 +149,25 @@
 @media screen and (max-width: 1024px) {
   .navigationMenu.expanded ul {
     display: block;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
   }
 }
