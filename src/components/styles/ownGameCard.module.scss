@@ -24,5 +24,17 @@
     &:hover {
       border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
     }
+
+    &.info {
+      background-color: rgb(150, 147, 147);
+    }
   }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 90%;
 }
