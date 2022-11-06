@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import headerStyles from "./styles/header.module.scss";
 import logo from "./assets/logo.png";
 
+import { Web3Button } from '@web3modal/react'
+
 export default function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
     <div className={headerStyles.container}>
       <img className={headerStyles.logo} src={logo} alt="station3 logo" />
@@ -61,7 +64,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <button className={headerStyles.connectBtn}>Connect Wallet</button>
+          <Web3Button className={headerStyles.connectBtn}/>
         </nav>
       </div>
     </div>
