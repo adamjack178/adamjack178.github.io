@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import headerStyles from "./styles/header.module.scss";
 import logo from "./assets/logo.png";
 
+import { Station } from "../startWeb3.js"
+
 export default function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const station = new Station();
+
   return (
     <div className={headerStyles.container}>
       <img className={headerStyles.logo} src={logo} alt="station3 logo" />
@@ -61,7 +65,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <button className={headerStyles.connectBtn}>Connect Wallet</button>
+          <button className={headerStyles.connectBtn} onClick={station.connectWallet} >Connect Wallet</button>
         </nav>
       </div>
     </div>
