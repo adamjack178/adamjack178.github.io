@@ -6,6 +6,7 @@ import Games from "./pages/games";
 import Publishers from "./pages/publishers";
 import Roadmap from "./pages/roadmap";
 import "./App.css";
+import Leaderboard from "./pages/leaderboard";
 
 function App() {
   return (
@@ -45,6 +46,15 @@ function App() {
             <>
               {" "}
               <Roadmap />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/leaderboard"
+          element={
+            <>
+              {" "}
+              <Leaderboard />{" "}
             </>
           }
         />

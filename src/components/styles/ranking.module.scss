@@ -1,0 +1,265 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgb(39, 21, 73);
+  font-family: "Bebas Neue", cursive;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.233);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.infoSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+
+  span {
+    color: #fff;
+    font-size: 0.9em;
+  }
+}
+
+.info {
+  height: 21px;
+  width: 21px;
+  filter: invert(51%) sepia(69%) saturate(335%) hue-rotate(99deg)
+    brightness(71%) contrast(73%);
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(51%) sepia(69%) saturate(335%) hue-rotate(99deg)
+      brightness(91%) contrast(93%);
+  }
+}
+
+.gameName {
+  color: rgba(255, 255, 255, 0.288);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.3rem;
+}
+
+.topThree {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  height: 170px;
+  margin-top: 1rem;
+}
+
+.numberOne {
+  height: 120px;
+  width: 120px;
+  border: 3px solid gold;
+  border-radius: 50%;
+  align-self: flex-start;
+  position: relative;
+
+  p {
+    font-size: 5rem;
+    position: absolute;
+    top: -68px;
+    left: 10px;
+    transition: transform 1s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  img {
+    position: absolute;
+    background-color: gold;
+    border-radius: 50%;
+    padding: 0.1rem;
+    bottom: -12px;
+    left: 49px;
+    height: 20px;
+    width: 20px;
+  }
+
+  span {
+    position: absolute;
+    bottom: -35px;
+    left: 30px;
+    color: rgba(255, 255, 255, 0.473);
+    width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+}
+
+.numberTwo {
+  height: 80px;
+  width: 80px;
+  border: 3px solid rgb(53, 181, 231);
+  border-radius: 50%;
+  position: relative;
+
+  img {
+    position: absolute;
+    background-color: rgb(53, 181, 231);
+    border-radius: 50%;
+    padding: 0.1rem;
+    bottom: -10px;
+    left: 33px;
+    height: 15px;
+    width: 15px;
+  }
+
+  p {
+    font-size: 3rem;
+    position: absolute;
+    top: -38px;
+    left: 10px;
+    transition: transform 1s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: -35px;
+    left: 12px;
+    color: rgba(255, 255, 255, 0.473);
+    width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+}
+
+.numberThree {
+  height: 80px;
+  width: 80px;
+  border: 3px solid rgb(238, 54, 30);
+  border-radius: 50%;
+  position: relative;
+
+  img {
+    position: absolute;
+    background-color: rgb(238, 54, 30);
+    border-radius: 50%;
+    padding: 0.1rem;
+    bottom: -10px;
+    left: 33px;
+    height: 15px;
+    width: 15px;
+  }
+  p {
+    font-size: 3rem;
+    position: absolute;
+    top: -38px;
+    left: 10px;
+    transition: transform 1s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: -35px;
+    left: 12px;
+    color: rgba(255, 255, 255, 0.473);
+    width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+}
+
+.rankList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.rankSpot {
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .number {
+    color: #0a7e50;
+  }
+
+  .address {
+    color: rgba(255, 255, 255, 0.473);
+
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.closeBtn {
+  background-color: rgb(233, 35, 35);
+  font-size: 1.5rem;
+  padding: 0.075em 1em;
+  border-bottom: solid 0.19em rgb(122, 17, 17);
+  margin-top: 0.5rem;
+
+  &:hover {
+    border-bottom: solid 0.15em rgba(223, 223, 230, 0.541);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 370px;
+  }
+}

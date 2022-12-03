@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.gameImg {
+  width: 300px;
+  height: 150px;
+  border: 1px solid rgba(87, 85, 85, 0.301);
+  border-radius: 14px;
+  transition: transform 2s ease;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #0de28d;
+    box-shadow: 0 0 10px 0 #0a7e50 inset, 0 0 20px 2px #0a7e50;
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.gameGrid {
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  .gameGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .gameGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
