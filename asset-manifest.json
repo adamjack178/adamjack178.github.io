@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.5fb8c501.css",
-    "main.js": "/static/js/main.d599fb7e.js",
+    "main.css": "/static/css/main.a8009ada.css",
+    "main.js": "/static/js/main.0aef56b7.js",
     "static/js/787.87d1e7ad.chunk.js": "/static/js/787.87d1e7ad.chunk.js",
+    "static/media/game2.jpg": "/static/media/game2.4f7306fdab933297d2ce.jpg",
+    "static/media/game1.jpg": "/static/media/game1.3c21b0fbd963f80f4555.jpg",
     "static/media/bg.png": "/static/media/bg.83864c2cbc7f6d2efa03.png",
     "static/media/reel3.png": "/static/media/reel3.93bb44ff92468230497f.png",
     "static/media/reel2.png": "/static/media/reel2.1caf801c0c1b97488b93.png",
@@ -11,13 +13,17 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
+    "static/media/3.svg": "/static/media/3.1a9595e2e946d8452e4fe0b89f8bf0e1.svg",
+    "static/media/2.svg": "/static/media/2.37dc783d9c6ff5fc4be530b10f9ef3eb.svg",
+    "static/media/info.svg": "/static/media/info.0dbfea925329449949811e31e034f56a.svg",
     "static/media/xmark.svg": "/static/media/xmark.ae469738e479d31aa952364e12120ad2.svg",
-    "main.5fb8c501.css.map": "/static/css/main.5fb8c501.css.map",
-    "main.d599fb7e.js.map": "/static/js/main.d599fb7e.js.map",
+    "static/media/1.svg": "/static/media/1.92f89c79e4621dfab68cea4f0f8e5be0.svg",
+    "main.a8009ada.css.map": "/static/css/main.a8009ada.css.map",
+    "main.0aef56b7.js.map": "/static/js/main.0aef56b7.js.map",
     "787.87d1e7ad.chunk.js.map": "/static/js/787.87d1e7ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fb8c501.css",
-    "static/js/main.d599fb7e.js"
+    "static/css/main.a8009ada.css",
+    "static/js/main.0aef56b7.js"
   ]
 }
