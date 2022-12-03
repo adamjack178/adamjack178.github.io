@@ -63,6 +63,11 @@ export default function Header() {
                   ROADMAP
                 </Link>
               </li>
+              <li>
+                <Link className={headerStyles.link} to="/leaderboard">
+                  Leaderboards
+                </Link>
+              </li>
             </ul>
           </div>
           <button className={headerStyles.connectBtn} onClick={station.connectWallet} >Connect Wallet</button>
