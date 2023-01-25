@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 import headerStyles from "./styles/header.module.scss";
 import logo from "./assets/logo.png";
 
-import { Station } from "../startWeb3.js"
-
-export default function Header() {
+export default function Header(props) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const station = new Station();
+  const { stations } = props;
 
   return (
     <div className={headerStyles.container}>
@@ -70,7 +68,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <button className={headerStyles.connectBtn} onClick={station.connectWallet} >Connect Wallet</button>
+          <button className={headerStyles.connectBtn} onClick={()=>{stations.connectWallet()}} >Connect Wallet</button>
         </nav>
       </div>
     </div>

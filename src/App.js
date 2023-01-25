@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Reel from "./components/reel";
@@ -8,16 +9,28 @@ import Roadmap from "./pages/roadmap";
 import "./App.css";
 import Leaderboard from "./pages/leaderboard";
 
+import { Station } from "./startWeb3.js"
+
 function App() {
+
+  const station = new Station();
+
+   useEffect(() => {
+    async function fetchData() {
+     await station.loadContract();
+   }
+   fetchData();
+  }, [station]);
+
   return (
     <>
-      <Header />
+      <Header stations={station}/>
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Hero />
+              <Hero stations={station}/>
               <Reel />
             </>
           }

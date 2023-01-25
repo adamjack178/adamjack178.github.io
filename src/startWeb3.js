@@ -50,7 +50,7 @@ class Station {
           ],
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
-    this.contract = new ethers.Contract('0x1a9576f8AD1a9783C2B6816f9169Bacd002f06D2', ABI, signer)
+    this.contract = new ethers.Contract('0xb1a71B647873e333433076508b9b924CF5090A76', ABI, signer)
   }
 
   async loadContract() {
@@ -59,7 +59,7 @@ class Station {
     const signer = ethersProvider.getSigner();
     this.accounts = await ethersProvider.listAccounts();
 
-    this.contract = new ethers.Contract('0x1a9576f8AD1a9783C2B6816f9169Bacd002f06D2', ABI, signer)
+    this.contract = new ethers.Contract('0xb1a71B647873e333433076508b9b924CF5090A76', ABI, signer)
     console.log("contracts loaded")
   }
 
@@ -75,7 +75,7 @@ class Station {
 
   async buyConsole(count,avax) {
     try {
-    await this.contract.mint(count, {value: ethers.utils.parseEther(String(avax))}).then((e) =>{console.log(e)})
+    await this.contract.mint(1, {value: ethers.utils.parseEther("1")}).then((e) =>{console.log(e)})
     
     } catch (e) {
       console.error(e.message, e);
