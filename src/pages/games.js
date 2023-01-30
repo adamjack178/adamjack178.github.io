@@ -36,17 +36,17 @@ export default function Reel() {
       <div className={gamesStyles.gameGrid}>
         {current === "games" ? (
           <>
-            <OwnGameCard file={"/cart.glb"} />
-            <OwnGameCard file={"/cart2.glb"} />
+            <OwnGameCard file={"/galaxy.glb"} />
+            {/* <OwnGameCard file={"/cart2.glb"} />
             <OwnGameCard file={"/cart3.glb"} />
-            <OwnGameCard file={"/cart4.glb"} />
+            <OwnGameCard file={"/cart4.glb"} /> */}
           </>
         ) : (
           <>
-            <BrowseGameCard file={"/cart.glb"} />
-            <BrowseGameCard file={"/cart2.glb"} />
+            <BrowseGameCard file={"/galaxy.glb"} />
+            {/* <BrowseGameCard file={"/cart2.glb"} />
             <BrowseGameCard file={"/cart3.glb"} />
-            <BrowseGameCard file={"/cart4.glb"} />
+            <BrowseGameCard file={"/cart4.glb"} /> */}
           </>
         )}
       </div>

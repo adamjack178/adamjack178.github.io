@@ -1,14 +1,12 @@
-import React, { useRef } from "react";
-import Popup from "reactjs-popup";
+import React from "react";
 import Typewriter from "typewriter-effect";
 
 import Console3d from "./console3d";
-import Buy from "./buy";
 import heroStyles from "./styles/hero.module.scss";
 
-export default function Hero() {
-  const ref = useRef();
-  const closeTooltip = () => ref.current.close();
+export default function Hero(props) {
+
+  const { stations } = props;
   return (
     <div className={heroStyles.container}>
       <div className={heroStyles.typewriter}>
@@ -53,16 +51,9 @@ export default function Hero() {
             Web3 <br /> Video Game Console
           </p>
           <div className={heroStyles.btnContainer}>
-            <Popup
-              ref={ref}
-              trigger={<button className={heroStyles.getOnBtn}>GET ON</button>}
-              p
-              modal
-            >
-              <span>
-                <Buy close={closeTooltip}></Buy>
-              </span>
-            </Popup>
+         
+              <button className={heroStyles.getOnBtn} onClick={()=>{stations.buyConsole(1,1)}}>GET ON</button>
+      
             {/* <button className={heroStyles.getCheatsBtn}>GET $CHEATS</button> */}
           </div>
         </div>
