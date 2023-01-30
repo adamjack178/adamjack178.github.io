@@ -50,12 +50,12 @@ export default function GameInfo(props) {
       />
       <div className={gameInfoStyles.middleSection}>
         <div className={gameInfoStyles.gameContainer}>
-          <Game3d animate={1} file={"/cartInfo.glb"} />
+          <Game3d animate={1} file={"/galaxyInfo.glb"} />
         </div>
 
         <div className={gameInfoStyles.infoSection}>
           <h3>Game Info</h3>
-          <span>Name: Gunners Game</span>
+          <span>Name: Galaxy Frontier</span>
           <span>Publish Date: 31/10/2022</span>
           <span>Publisher: Station</span>
           <span>Developers: Station</span>
