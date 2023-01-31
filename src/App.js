@@ -6,9 +6,10 @@ import Games from "./pages/games";
 import Publishers from "./pages/publishers";
 import Roadmap from "./pages/roadmap";
 import "./App.css";
-import Leaderboard from "./pages/leaderboard";
+// import Leaderboard from "./pages/leaderboard";
 
 import { Station } from "./startWeb3.js"
+import Arcade from "./pages/arcade";
 
 function App() {
 
@@ -61,11 +62,11 @@ function App() {
           }
         />
         <Route
-          path="/leaderboard"
+          path="/arcade"
           element={
             <>
               {" "}
-              <Leaderboard />{" "}
+              <Arcade />{" "}
             </>
           }
         />

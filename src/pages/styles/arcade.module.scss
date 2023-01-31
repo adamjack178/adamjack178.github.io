@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  //   background-color: rgba(255, 0, 0, 0.274);
+  font-family: "Bebas Neue", cursive;
+  padding: 4rem;
+}
+
+.timeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  //   background-color: rgba(255, 255, 0, 0.39);
+  width: 60%;
+
+  h1 {
+    letter-spacing: 0.3em;
+    font-size: 3.8vw;
+    color: rgba(255, 255, 255, 0.945);
+  }
+}
+
+.timeBlocksSection {
+  display: flex;
+  justify-content: center;
+  //   background-color: rgba(0, 0, 255, 0.349);
+  width: 80%;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem;
+//   background-color: rgba(245, 245, 220, 0.719);
+  border-bottom: 4px solid #f72359;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.5vmin;
+    font-weight: 200;
+    color: rgb(141, 140, 140);
+  }
+
+  span {
+    font-size: 6.8vw;
+    color: #10dd8b;
+  }
+}
