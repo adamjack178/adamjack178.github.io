@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import arcadeStyles from "./styles/arcade.module.scss";
+import ticket from "../components/assets/ticket.png";
 
 const Arcade = () => {
   const [date] = useState(new Date("2023-02-10"));
@@ -34,34 +35,40 @@ const Arcade = () => {
 
   return (
     <div className={arcadeStyles.container}>
-      <div className={arcadeStyles.timeSection}>
-        <h1>Arcadium Tickets</h1>
-        <div className={arcadeStyles.timeBlocksSection}>
-          <div className={arcadeStyles.timeBlock}>
-            <h3>Days</h3>
-            <span>{countdown.days} :</span>
+      <div className={arcadeStyles.Insidecontainer}>
+        <div className={arcadeStyles.timeSection}>
+          <h1>Arcadium Tickets</h1>
+          <div className={arcadeStyles.timeBlocksSection}>
+            <div className={arcadeStyles.timeBlock}>
+              <h3>Days</h3>
+              <span>{countdown.days} :</span>
+            </div>
+            <div className={arcadeStyles.timeBlock}>
+              <h3>Hours</h3>
+              <span>{countdown.hours} :</span>
+            </div>
+            <div className={arcadeStyles.timeBlock}>
+              <h3>Minutes</h3>
+              <span>{countdown.minutes} :</span>
+            </div>
+            <div className={arcadeStyles.timeBlock}>
+              <h3>Seconds</h3>
+              <span>{countdown.seconds}</span>
+            </div>
           </div>
-          <div className={arcadeStyles.timeBlock}>
-            <h3>Hours</h3>
-            <span>{countdown.hours} :</span>
+        </div>
+
+        <div className={arcadeStyles.ticketSection}>
+          <div className={arcadeStyles.imgContainer}>
+            <img src={ticket} alt="Arcadium ticket" />
           </div>
-          <div className={arcadeStyles.timeBlock}>
-            <h3>Minutes</h3>
-            <span>{countdown.minutes} :</span>
-          </div>
-          <div className={arcadeStyles.timeBlock}>
-            <h3>Seconds</h3>
-            <span>{countdown.seconds}</span>
-          </div>
+          <button onClick={handleBuyTicket}>Buy Ticket</button>
         </div>
       </div>
 
-      <div>
-        <button onClick={handleBuyTicket}>Buy Ticket</button>
-        <section>
-          <h3>Total Tickets Bought</h3>
-          <p>{tickets}</p>
-        </section>
+      <div className={arcadeStyles.ticketsCounter}>
+        <h3>Total Tickets Bought</h3>
+        <p>{tickets}</p>
       </div>
     </div>
   );
