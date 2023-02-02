@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Popup from 'reactjs-popup'
 
 import arcadeStyles from "./styles/arcade.module.scss";
 import ticket from "../components/assets/ticket.png";
+import Tickets from "../components/tickets";
 
 const Arcade = () => {
   const [date] = useState(new Date("2023-02-10"));
   const [countdown, setCountdown] = useState({});
   const [tickets, setTickets] = useState(0);
+  const ref = useRef()
+  const closeTooltip = () => ref.current.close()
 
   useEffect(() => {
     const calculateCountdown = () => {
@@ -67,8 +71,21 @@ const Arcade = () => {
       </div>
 
       <div className={arcadeStyles.ticketsCounter}>
-        
+         
+      <Popup
+        ref={ref}
+        closeOnDocumentClick={false}
+        closeOnEscape={false}
+        trigger={
           <span>My Tickets</span>
+        }
+        p
+        modal
+      >
+        <span>
+          <Tickets close={closeTooltip} />
+        </span>
+      </Popup>
         
         <h3>Total Tickets Bought</h3>
         <p>{tickets}</p>
