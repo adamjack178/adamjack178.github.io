@@ -67,6 +67,9 @@ const Arcade = () => {
       </div>
 
       <div className={arcadeStyles.ticketsCounter}>
+        
+          <span>My Tickets</span>
+        
         <h3>Total Tickets Bought</h3>
         <p>{tickets}</p>
       </div>

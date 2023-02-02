@@ -119,6 +119,27 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  position: relative;
+
+  span {
+    position: absolute;
+    left: 0;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.733);
+    cursor: pointer;
+    padding: 0;
+    margin-right: 2rem;
+    background-color: #0a7e50;
+    font-size: 1.1rem;
+    padding: 0.3em 1em;
+    border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+    &:hover {
+      color: #fff;
+      border-bottom: solid 0.15em rgba(223, 223, 230, 0.808);
+    }
+  }
 
   h3 {
     letter-spacing: 0.3em;
@@ -168,6 +189,12 @@
     button {
       margin-top: 1rem;
       margin-bottom: 1rem;
+    }
+  }
+
+  .ticketsCounter {
+    span {
+      left: -130px;
     }
   }
 
