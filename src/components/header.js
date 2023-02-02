@@ -61,11 +61,11 @@ export default function Header(props) {
                   ROADMAP
                 </Link>
               </li>
-              {/* <li>
-                <Link className={headerStyles.link} to="/leaderboard">
-                  Leaderboards
+              <li>
+                <Link className={headerStyles.link} to="/arcade">
+                  Arcadium
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
           <button className={headerStyles.connectBtn} onClick={()=>{stations.connectWallet()}} >Connect Wallet</button>

@@ -1,0 +1,206 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Bebas Neue", cursive;
+}
+
+.Insidecontainer {
+  display: flex;
+}
+
+.timeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 60%;
+
+  h1 {
+    letter-spacing: 0.3em;
+    font-size: 3.8vw;
+    color: rgba(255, 255, 255, 0.945);
+  }
+}
+
+.timeBlocksSection {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem;
+  border-bottom: 4px solid #f72359;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.5vmin;
+    font-weight: 200;
+    color: rgb(141, 140, 140);
+  }
+
+  span {
+    font-size: 6.8vw;
+    color: #10dd8b;
+  }
+}
+
+.ticketSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 40%;
+
+  button {
+    position: relative;
+    margin-top: -1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #0a7e50;
+    padding: 1em 4em;
+    border: none;
+    color: white;
+    font-size: 3vmin;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 100px;
+  }
+  button span {
+    position: relative;
+    pointer-events: none;
+  }
+  button::before {
+    --size: 0;
+    content: "";
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, #42ca9493, transparent);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+  button:hover::before {
+    --size: 400px;
+  }
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  img {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.ticketsCounter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+
+  span {
+    position: absolute;
+    left: 0;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.733);
+    cursor: pointer;
+    padding: 0;
+    margin-right: 2rem;
+    background-color: #0a7e50;
+    font-size: 1.1rem;
+    padding: 0.3em 1em;
+    border-bottom: solid 0.15em rgba(9, 9, 36, 0.541);
+
+    &:hover {
+      color: #fff;
+      border-bottom: solid 0.15em rgba(223, 223, 230, 0.808);
+    }
+  }
+
+  h3 {
+    letter-spacing: 0.3em;
+    font-size: 3.8vmin;
+    color: rgba(255, 255, 255, 0.945);
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 7vmin;
+    font-weight: 900;
+    padding: 0.6rem;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #11001e;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2rem;
+  }
+  .Insidecontainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+  }
+  .timeBlocksSection {
+    width: 100%;
+  }
+
+  .timeBlock {
+    border-bottom: 2px solid #f72359;
+  }
+
+  .ticketSection {
+    button {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .ticketsCounter {
+    span {
+      left: -130px;
+    }
+  }
+
+  .imgContainer {
+    img {
+      width: 80%;
+    }
+  }
+}
