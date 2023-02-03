@@ -5,12 +5,13 @@ import arcadeStyles from "./styles/arcade.module.scss";
 import ticket from "../components/assets/ticket.png";
 import Tickets from "../components/tickets";
 
-const Arcade = () => {
+const Arcade = (props) => {
   const [date] = useState(new Date("2023-02-10"));
   const [countdown, setCountdown] = useState({});
   const [tickets, setTickets] = useState(0);
   const ref = useRef()
   const closeTooltip = () => ref.current.close()
+  const { stations } = props;
 
   useEffect(() => {
     const calculateCountdown = () => {
@@ -30,11 +31,15 @@ const Arcade = () => {
     };
 
     const intervalId = setInterval(calculateCountdown, 1000);
-    return () => clearInterval(intervalId);
-  }, [date]);
 
-  const handleBuyTicket = () => {
-    setTickets(tickets + 1);
+    setTickets(stations.ticketsArcadium)
+  
+    return () => clearInterval(intervalId);
+  }, [date,tickets,setTickets,stations.ticketsArcadium]);  
+
+  const handleBuyTicket = async () => {
+    stations.buyTicket();
+    setTickets(stations.ticketsArcadium)
   };
 
   return (

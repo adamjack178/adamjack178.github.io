@@ -22,6 +22,7 @@ class Station {
     this.contractLotto = null;
     this.consoles = [];
     this.accounts = [];
+    this.ticketsArcadium = 0;
   }
 
   getAccount() {
@@ -53,7 +54,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x5084d841C8fb8D97aE943b858179c91295C16375', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x978A72804B57F0842dF59e9FEC7AD5efA21e3A84', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -63,7 +64,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x5084d841C8fb8D97aE943b858179c91295C16375', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x978A72804B57F0842dF59e9FEC7AD5efA21e3A84', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -112,6 +113,42 @@ class Station {
       }
 
       this.consoles.push(ballObj)
+    }
+  }
+
+  async buyTicket(avax) {
+    try {
+
+    await this.contractLotto.mint(1, 321 ,{value: ethers.utils.parseEther("0.1")}).then(transactionResponse => {
+      transactionResponse.wait().then(receipt => {
+         setTimeout(async() => { await this.getTotalTicketsArcadium() })
+      })
+    })
+          
+  
+
+    } catch (e) {
+      console.error(e.message, e);
+      Swal.fire({
+          title: 'Error',
+          icon:'warning',
+          text:e.data.message,
+          confirmButtonText: 'Ok',
+          allowOutsideClick: false,
+          confirmButtonColor: '#202020',
+          cancelButtonColor: '#eb3636',
+      })
+    }
+  }
+
+  async getTotalTicketsArcadium() {
+    try {
+    this.ticketsArcadium = await this.contractLotto.totalSupply()
+    const count = parseInt(this.ticketsArcadium)
+    this.ticketsArcadium = count;
+
+    } catch (e) {
+      console.error(e.message, e);
     }
   }
 }
