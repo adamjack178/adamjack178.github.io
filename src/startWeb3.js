@@ -1,6 +1,7 @@
 import { ethers } from "ethers"
 import Web3Modal from "web3modal";
 import ABI from "./abi/console.json"
+import ABIlotto from "./abi/lotto.json"
 import Swal from 'sweetalert2'
 
 const providerOptions = {};
@@ -18,6 +19,7 @@ class Station {
 
   constructor() {
     this.contract = null;
+    this.contractLotto = null;
     this.consoles = [];
     this.accounts = [];
   }
@@ -51,6 +53,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0x5084d841C8fb8D97aE943b858179c91295C16375', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -60,6 +63,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0x5084d841C8fb8D97aE943b858179c91295C16375', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
