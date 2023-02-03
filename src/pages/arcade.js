@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Popup from 'reactjs-popup'
+import Swal from "sweetalert2"
 
 import arcadeStyles from "./styles/arcade.module.scss";
 import ticket from "../components/assets/ticket.png";
@@ -37,9 +38,42 @@ const Arcade = (props) => {
     return () => clearInterval(intervalId);
   }, [date,tickets,setTickets,stations.ticketsArcadium]);  
 
+  const numberInRange = (num, low, high) => {
+    if (num > low && num < high) {
+      return true;
+    }
+    return false;
+}
+
   const handleBuyTicket = async () => {
-    stations.buyTicket();
-    setTickets(stations.ticketsArcadium)
+     
+     Swal.fire({
+      title: "Enter a number between 1 and 1000",
+      input: "text",
+      inputValue: 1,
+      showCancelButton: true,
+      allowOutsideClick: false,
+      inputValidator: value => {
+        if (isNaN(value) || value === "") {
+          return "You need to write a number!"
+        } 
+      },
+    }).then(async result => {
+      if (result.isConfirmed) {
+        try {
+          stations.buyTicket(parseInt(result.value));
+          setTickets(stations.ticketsArcadium)
+
+        } catch (e) {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: e.data ? e.reason : "the transaction has failed",
+          })
+        }
+      }
+    })
+
   };
 
   return (

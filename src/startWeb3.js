@@ -54,7 +54,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x978A72804B57F0842dF59e9FEC7AD5efA21e3A84', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -64,7 +64,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x978A72804B57F0842dF59e9FEC7AD5efA21e3A84', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -83,11 +83,10 @@ class Station {
     await this.contract.mint(1, {value: ethers.utils.parseEther("1")}).then((e) =>{console.log(e)})
     
     } catch (e) {
-      console.error(e.message, e);
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.data.message,
+          text:e.reason,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
@@ -116,23 +115,20 @@ class Station {
     }
   }
 
-  async buyTicket(avax) {
+  async buyTicket(number) {
     try {
 
-    await this.contractLotto.mint(1, 321 ,{value: ethers.utils.parseEther("0.1")}).then(transactionResponse => {
+    await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther("0.1")}).then(transactionResponse => {
       transactionResponse.wait().then(receipt => {
          setTimeout(async() => { await this.getTotalTicketsArcadium() })
       })
     })
-          
-  
 
     } catch (e) {
-      console.error(e.message, e);
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.data.message,
+          text:e.reason,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
