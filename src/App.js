@@ -18,6 +18,7 @@ function App() {
    useEffect(() => {
     async function fetchData() {
      await station.loadContract();
+     await station.getTotalTicketsArcadium();
    }
    fetchData();
   }, [station]);
@@ -66,7 +67,7 @@ function App() {
           element={
             <>
               {" "}
-              <Arcade />{" "}
+              <Arcade stations={station} />{" "}
             </>
           }
         />

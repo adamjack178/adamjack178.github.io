@@ -1,6 +1,7 @@
 import { ethers } from "ethers"
 import Web3Modal from "web3modal";
 import ABI from "./abi/console.json"
+import ABIlotto from "./abi/lotto.json"
 import Swal from 'sweetalert2'
 
 const providerOptions = {};
@@ -18,8 +19,10 @@ class Station {
 
   constructor() {
     this.contract = null;
+    this.contractLotto = null;
     this.consoles = [];
     this.accounts = [];
+    this.ticketsArcadium = 0;
   }
 
   getAccount() {
@@ -51,6 +54,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -60,6 +64,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -78,11 +83,10 @@ class Station {
     await this.contract.mint(1, {value: ethers.utils.parseEther("1")}).then((e) =>{console.log(e)})
     
     } catch (e) {
-      console.error(e.message, e);
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.data.message,
+          text:e.reason,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
@@ -108,6 +112,39 @@ class Station {
       }
 
       this.consoles.push(ballObj)
+    }
+  }
+
+  async buyTicket(number) {
+    try {
+
+    await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther("0.1")}).then(transactionResponse => {
+      transactionResponse.wait().then(receipt => {
+         setTimeout(async() => { await this.getTotalTicketsArcadium() })
+      })
+    })
+
+    } catch (e) {
+      Swal.fire({
+          title: 'Error',
+          icon:'warning',
+          text:e.reason,
+          confirmButtonText: 'Ok',
+          allowOutsideClick: false,
+          confirmButtonColor: '#202020',
+          cancelButtonColor: '#eb3636',
+      })
+    }
+  }
+
+  async getTotalTicketsArcadium() {
+    try {
+    this.ticketsArcadium = await this.contractLotto.totalSupply()
+    const count = parseInt(this.ticketsArcadium)
+    this.ticketsArcadium = count;
+
+    } catch (e) {
+      console.error(e.message, e);
     }
   }
 }

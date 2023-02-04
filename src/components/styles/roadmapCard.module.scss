@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(250, 235, 215);
+  background-color: rgb(251, 251, 244);
   border-radius: 20px;
   padding: 1rem;
   gap: 1rem;
@@ -38,6 +38,7 @@
 }
 
 .circle {
+  color: rgba(0, 0, 0, 0.815);
   align-self: center;
   width: 150px;
   filter: invert(35%) sepia(94%) saturate(617%) hue-rotate(113deg)
