@@ -48,7 +48,7 @@ const Arcade = (props) => {
   const handleBuyTicket = async () => {
      
      Swal.fire({
-      title: "Enter a number between 1 and 1000",
+      title: "Choose a number for your lottery ticket between 1 and 1000",
       input: "text",
       inputValue: 1,
       showCancelButton: true,

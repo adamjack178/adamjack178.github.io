@@ -9,28 +9,28 @@ export default function Roadmap() {
       <RoadmapCard
         number={1}
         title={"The STATION is open!"}
-        description={"Website launch, Bag Boy launch, First game launch"}
+        description={"Website launch, Bag Boy launch, Ardium Launch"}
         quarter={"Q1"}
         year={2023}
       />
       <RoadmapCard
         number={2}
-        title={"Some Title"}
-        description={"Lorem ipsum dolor, sit amet"}
+        title={"STATION3 for y'all"}
+        description={"New Arcadium Games, multichain, First Bag Boy game launch"}
         quarter={"Q2"}
         year={2023}
       />
       <RoadmapCard
         number={3}
-        title={"Some Title"}
-        description={"Lorem ipsum dolor, sit amet"}
+        title={"Take your Tickect Sir!"}
+        description={"$TICKET token launch"}
         quarter={"Q3"}
         year={2023}
       />
       <RoadmapCard
         number={4}
-        title={"Some Title"}
-        description={"Lorem ipsum dolor, sit amet"}
+        title={"All aboard the red train!"}
+        description={"Exapand the STATION 3 ecosystem"}
         quarter={"Q4"}
         year={2023}
       />
