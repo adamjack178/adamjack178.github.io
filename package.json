@@ -4,6 +4,8 @@
   "homepage": "https://alistairhack.github.io",
   "private": true,
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-scroll-area": "^1.0.2",
     "@react-three/drei": "^9.34.3",
     "@react-three/fiber": "^8.8.9",
     "@testing-library/jest-dom": "^5.16.5",

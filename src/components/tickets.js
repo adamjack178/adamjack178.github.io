@@ -2,6 +2,7 @@ import React from "react";
 
 import ticketStyles from "./styles/tickets.module.scss";
 import ticket from "./assets/ticket.png";
+import TicketList from "./ticketsList";
 
 export default function Tickets(props) {
   const { close } = props;
@@ -18,10 +19,7 @@ export default function Tickets(props) {
         >
           <h3>Token ID: 1234567891234567891234587</h3>
         </a>
-
-        <h4>
-          Amount: <span>22</span>
-        </h4>
+        <TicketList />
       </div>
       <button onKeyDown={close} onClick={close}>
         Close
