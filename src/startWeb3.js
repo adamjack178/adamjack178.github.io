@@ -54,7 +54,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x4bD87630C24Cee297d41113F3AaA266CF0705F82', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -64,7 +64,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0xC71C6fef6C6842121d1d63D2122406Ea6EEe5A8C', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x4bD87630C24Cee297d41113F3AaA266CF0705F82', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
