@@ -54,7 +54,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x4bD87630C24Cee297d41113F3AaA266CF0705F82', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -64,7 +64,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x4bD87630C24Cee297d41113F3AaA266CF0705F82', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -115,10 +115,17 @@ class Station {
     }
   }
 
-  async buyTicket(number) {
-    try {
+  async haveConsole() {
+    const data = await this.contractLotto.walletHoldsToken()
+    return data;
+  }
 
-    await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther("0.1")}).then(transactionResponse => {
+  async buyTicket(number,price) {
+    try {
+    let price = '0.1';
+    const data = await this.haveConsole()
+    if(data === true) price = '0.06';
+    await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther(price)}).then(transactionResponse => {
       transactionResponse.wait().then(receipt => {
          setTimeout(async() => { await this.getTotalTicketsArcadium() })
       })

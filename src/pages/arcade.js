@@ -38,13 +38,6 @@ const Arcade = (props) => {
     return () => clearInterval(intervalId);
   }, [date,tickets,setTickets,stations.ticketsArcadium]);  
 
-  const numberInRange = (num, low, high) => {
-    if (num > low && num < high) {
-      return true;
-    }
-    return false;
-}
-
   const handleBuyTicket = async () => {
      
      Swal.fire({
