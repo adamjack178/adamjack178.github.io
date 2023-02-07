@@ -16,6 +16,8 @@ export default function BrowseGameCard(props) {
       <div className={browseGameStyles.bottom}>
         <Popup
           ref={ref}
+          closeOnDocumentClick={false}
+          closeOnEscape={false}
           trigger={<button className={browseGameStyles.info}>INFO</button>}
           p
           modal

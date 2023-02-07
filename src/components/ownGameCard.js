@@ -16,6 +16,8 @@ export default function OwnGameCard(props) {
       <div className={ownGameStyles.bottom}>
         <Popup
           ref={ref}
+          closeOnDocumentClick={false}
+          closeOnEscape={false}
           trigger={<button className={ownGameStyles.info}>INFO</button>}
           p
           modal

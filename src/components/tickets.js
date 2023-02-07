@@ -6,20 +6,21 @@ import TicketList from "./ticketsList";
 
 export default function Tickets(props) {
   const { close } = props;
+  const { mytickets } = props;
+
   return (
     <div className={ticketStyles.container}>
       <h2>My Tickets</h2>
       <img src={ticket} alt="arcadium ticket" />
       <div className={ticketStyles.infoSection}>
         <a
-          href="https://testnet.snowtrace.io/token/0xE70F41944744855647eec543cdCe9Ee17DA676A1"
+          href="https://testnet.snowtrace.io/address/0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f"
           target="_blank"
-          without
           rel="noreferrer"
         >
-          <h3>Token ID: 1234567891234567891234587</h3>
+          <h3>Contract: 0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f</h3>
         </a>
-        <TicketList />
+        <TicketList list={mytickets}/>
       </div>
       <button onKeyDown={close} onClick={close}>
         Close

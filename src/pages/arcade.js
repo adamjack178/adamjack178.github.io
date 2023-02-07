@@ -36,14 +36,7 @@ const Arcade = (props) => {
     setTickets(stations.ticketsArcadium)
   
     return () => clearInterval(intervalId);
-  }, [date,tickets,setTickets,stations.ticketsArcadium]);  
-
-  const numberInRange = (num, low, high) => {
-    if (num > low && num < high) {
-      return true;
-    }
-    return false;
-}
+  }, [date,tickets,setTickets,stations.ticketsArcadium,stations.tickets]);  
 
   const handleBuyTicket = async () => {
      
@@ -122,7 +115,7 @@ const Arcade = (props) => {
         modal
       >
         <span>
-          <Tickets close={closeTooltip} />
+          <Tickets mytickets={stations.tickets} close={closeTooltip} />
         </span>
       </Popup>
         

@@ -44,6 +44,11 @@
 }
 
 .infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   color: #fff;
   text-align: center;
   margin-top: 0.3rem;
