@@ -9,7 +9,7 @@ export default function Roadmap() {
       <RoadmapCard
         number={1}
         title={"The STATION is open!"}
-        description={"Website launch, Bag Boy launch, Ardium Launch"}
+        description={"Website launch, Bag Boy launch, Arcadium Launch"}
         quarter={"Q1"}
         year={2023}
       />
@@ -30,7 +30,7 @@ export default function Roadmap() {
       <RoadmapCard
         number={4}
         title={"All aboard the red train!"}
-        description={"Exapand the STATION 3 ecosystem"}
+        description={"Expand the STATION 3 ecosystem"}
         quarter={"Q4"}
         year={2023}
       />
