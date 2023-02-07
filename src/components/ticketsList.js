@@ -19,7 +19,7 @@ const TicketList = (props) => {
             <div className={tckListStyles.Tag} key={index}>
               <div>ID: {tag.id.toString()}</div>
               <div>Number: {tag.number.toString()}</div>
-              <div>Purchase At: {getDate(tag.purchaseTime)}</div>
+              <div>Purchased At: {getDate(tag.purchaseTime)}</div>
             </div>
           ))}
         </div>
