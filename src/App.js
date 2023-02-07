@@ -18,6 +18,7 @@ function App() {
    useEffect(() => {
     async function fetchData() {
      await station.loadContract();
+     await station.loadTickets();
      await station.getTotalTicketsArcadium();
    }
    fetchData();

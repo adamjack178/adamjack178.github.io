@@ -22,6 +22,7 @@ class Station {
     this.contractLotto = null;
     this.consoles = [];
     this.accounts = [];
+    this.tickets = [];
     this.ticketsArcadium = 0;
   }
 
@@ -54,7 +55,7 @@ class Station {
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x0b6cd869d9cd41eFFAcDe2651C129cd431A027FD', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -64,7 +65,7 @@ class Station {
     this.accounts = await ethersProvider.listAccounts();
 
     this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f', ABIlotto, signer)
+    this.contractLotto =  new ethers.Contract('0x0b6cd869d9cd41eFFAcDe2651C129cd431A027FD', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -95,23 +96,27 @@ class Station {
     }
   }
 
-  async loadConsoles() {
-    this.ballsCount = 0;
-    this.ballsCount = await this.contract.balanceOf(this.account[0])
-    const count = parseInt(this.ballsCount)
+  async loadTickets() {
+    this.tickets = [];
+    this.tCount = 0;
+    this.tCount = await this.contractLotto.balanceOf(this.getAccount())
+    const count = parseInt(this.tCount)
 
     for (var i = 0; i < count; i++) {
-      let cellID = await this.contract.tokenOfOwnerByIndex(this.account[0], i)
+      let ticketID = await this.contractLotto.tokenOfOwnerByIndex(this.getAccount(), i)
 
-      let parseID = parseInt(cellID)
+      let parseID = parseInt(ticketID)-1
 
-      let ball = await this.contract.allPlebs(parseID)
-
-      let ballObj = {
-        NftData: ball.NftData,
+      const ticket = await this.contractLotto.allTickets(parseID)
+//console.log(ticket)
+      let tObj = {
+        id: ticket.Id,
+        purchaseTime: ticket.purchaseTime,
+        number: ticket.number,
+        owner: ticket.owner
       }
 
-      this.consoles.push(ballObj)
+      this.tickets.push(tObj)
     }
   }
 
@@ -127,7 +132,7 @@ class Station {
     if(data === true) price = '0.06';
     await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther(price)}).then(transactionResponse => {
       transactionResponse.wait().then(receipt => {
-         setTimeout(async() => { await this.getTotalTicketsArcadium() })
+         setTimeout(async() => { await this.getTotalTicketsArcadium(); await this.loadTickets();})
       })
     })
 
