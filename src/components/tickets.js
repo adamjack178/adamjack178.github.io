@@ -14,11 +14,11 @@ export default function Tickets(props) {
       <img src={ticket} alt="arcadium ticket" />
       <div className={ticketStyles.infoSection}>
         <a
-          href="https://testnet.snowtrace.io/address/0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f"
+          href="https://snowtrace.io/address/0x794d9112ede255d1096df2e75ce93205899313f1"
           target="_blank"
           rel="noreferrer"
         >
-          <h3>Contract: 0x30C3dD0Bf6F4bcceeF877EA6685C1547F7D27E6f</h3>
+          <h3>Contract: 0x794d9112ede255d1096df2e75ce93205899313f1</h3>
         </a>
         <TicketList list={mytickets}/>
       </div>

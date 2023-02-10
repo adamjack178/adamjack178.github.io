@@ -7,7 +7,7 @@ import ticket from "../components/assets/ticket.png";
 import Tickets from "../components/tickets";
 
 const Arcade = (props) => {
-  const [date] = useState(new Date("2023-02-10"));
+  const [date] = useState(new Date("2023-02-17"));
   const [countdown, setCountdown] = useState({});
   const [tickets, setTickets] = useState(0);
   const ref = useRef()
@@ -41,7 +41,7 @@ const Arcade = (props) => {
   const handleBuyTicket = async () => {
      
      Swal.fire({
-      title: "Choose a number for your lottery ticket between 1 and 1000",
+      title: "Choose a number for your lottery ticket between 1 and 500",
       input: "text",
       inputValue: 1,
       showCancelButton: true,
