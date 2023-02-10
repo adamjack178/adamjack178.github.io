@@ -87,7 +87,7 @@ class Station {
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.reason,
+          text:e.data.message,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
@@ -140,7 +140,7 @@ class Station {
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.reason,
+          text:e.data.message,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
