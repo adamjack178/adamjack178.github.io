@@ -153,13 +153,34 @@
   p {
     padding: 0;
     margin: 0;
-    margin-top: 1rem;
     font-size: 7vmin;
     font-weight: 900;
     padding: 0.6rem;
     border-radius: 10px;
     color: #fff;
     background-color: #11001e;
+  }
+}
+
+.avaxLogo {
+  height: 60px;
+  width: 60px;
+}
+
+.ticketsBoughtAmounts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 1rem;
+  gap: 0.7rem;
+
+  h4 {
+    padding: 0;
+    margin: 0;
+    font-size: 7vmin;
+    font-weight: 900;
+    color: #fff;
   }
 }
 
@@ -194,7 +215,7 @@
 
   .ticketsCounter {
     span {
-      left: -130px;
+      top: 100px;
     }
   }
 
