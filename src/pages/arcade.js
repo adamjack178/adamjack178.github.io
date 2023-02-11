@@ -118,7 +118,7 @@ const Arcade = (props) => {
         <div className={arcadeStyles.ticketsBoughtAmounts}>
           <p>{tickets}</p>
           <h4>=</h4>
-          <h4>{parseFloat(stations.potArcadium).toFixed(2)}</h4>
+          <h4>{stations.potArcadium}</h4>
           <img className={arcadeStyles.avaxLogo} src={avax} alt="avax logo" />
         </div>
       </div>
