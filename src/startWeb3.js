@@ -163,8 +163,8 @@ class Station {
 
   async getPotArcadium() {
     try {
-    this.potArcadium = await this.contractLotto.pot()
-    const pot = parseFloat(this.potArcadium).toFixed(2);
+    const t = await this.contractLotto.pot();
+    const pot = ethers.utils.formatEther(t);
     this.potArcadium = pot;
 
     } catch (e) {
