@@ -37,7 +37,7 @@ const Arcade = (props) => {
     setTickets(stations.ticketsArcadium);
 
     return () => clearInterval(intervalId);
-  }, [date, tickets, setTickets, stations.ticketsArcadium, stations.tickets]);
+  }, [date, tickets, setTickets, stations.ticketsArcadium, stations.tickets,stations.potArcadium]);
 
   const handleBuyTicket = async () => {
     Swal.fire({
@@ -118,7 +118,7 @@ const Arcade = (props) => {
         <div className={arcadeStyles.ticketsBoughtAmounts}>
           <p>{tickets}</p>
           <h4>=</h4>
-          <h4>100</h4>
+          <h4>{parseFloat(stations.potArcadium).toFixed(2)}</h4>
           <img className={arcadeStyles.avaxLogo} src={avax} alt="avax logo" />
         </div>
       </div>

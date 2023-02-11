@@ -20,6 +20,7 @@ function App() {
      await station.loadContract();
      await station.loadTickets();
      await station.getTotalTicketsArcadium();
+     await station.getPotArcadium();
    }
    fetchData();
   }, [station]);
