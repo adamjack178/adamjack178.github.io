@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-import Popup from 'reactjs-popup'
-import Swal from "sweetalert2"
+import Popup from "reactjs-popup";
+import Swal from "sweetalert2";
 
 import arcadeStyles from "./styles/arcade.module.scss";
 import ticket from "../components/assets/ticket.png";
+import avax from "../components/assets/avax.png";
 import Tickets from "../components/tickets";
 
 const Arcade = (props) => {
-  const [date] = useState(new Date("2023-02-10"));
+  const [date] = useState(new Date("2023-02-17"));
   const [countdown, setCountdown] = useState({});
   const [tickets, setTickets] = useState(0);
-  const ref = useRef()
-  const closeTooltip = () => ref.current.close()
+  const ref = useRef();
+  const closeTooltip = () => ref.current.close();
   const { stations } = props;
 
   useEffect(() => {
@@ -33,40 +34,37 @@ const Arcade = (props) => {
 
     const intervalId = setInterval(calculateCountdown, 1000);
 
-    setTickets(stations.ticketsArcadium)
-  
+    setTickets(stations.ticketsArcadium);
+
     return () => clearInterval(intervalId);
-  }, [date,tickets,setTickets,stations.ticketsArcadium,stations.tickets]);  
+  }, [date, tickets, setTickets, stations.ticketsArcadium, stations.tickets]);
 
   const handleBuyTicket = async () => {
-     
-     Swal.fire({
-      title: "Choose a number for your lottery ticket between 1 and 1000",
+    Swal.fire({
+      title: "Choose a number for your lottery ticket between 1 and 500",
       input: "text",
       inputValue: 1,
       showCancelButton: true,
       allowOutsideClick: false,
-      inputValidator: value => {
+      inputValidator: (value) => {
         if (isNaN(value) || value === "") {
-          return "You need to write a number!"
-        } 
+          return "You need to write a number!";
+        }
       },
-    }).then(async result => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           stations.buyTicket(parseInt(result.value));
-          setTickets(stations.ticketsArcadium)
-
+          setTickets(stations.ticketsArcadium);
         } catch (e) {
           Swal.fire({
             position: "center",
             icon: "error",
             title: e.data ? e.reason : "the transaction has failed",
-          })
+          });
         }
       }
-    })
-
+    });
   };
 
   return (
@@ -103,24 +101,26 @@ const Arcade = (props) => {
       </div>
 
       <div className={arcadeStyles.ticketsCounter}>
-         
-      <Popup
-        ref={ref}
-        closeOnDocumentClick={false}
-        closeOnEscape={false}
-        trigger={
-          <span>My Tickets</span>
-        }
-        p
-        modal
-      >
-        <span>
-          <Tickets mytickets={stations.tickets} close={closeTooltip} />
-        </span>
-      </Popup>
-        
+        <Popup
+          ref={ref}
+          closeOnDocumentClick={false}
+          closeOnEscape={false}
+          trigger={<span>My Tickets</span>}
+          p
+          modal
+        >
+          <span>
+            <Tickets mytickets={stations.tickets} close={closeTooltip} />
+          </span>
+        </Popup>
+
         <h3>Total Tickets Bought</h3>
-        <p>{tickets}</p>
+        <div className={arcadeStyles.ticketsBoughtAmounts}>
+          <p>{tickets}</p>
+          <h4>=</h4>
+          <h4>100</h4>
+          <img className={arcadeStyles.avaxLogo} src={avax} alt="avax logo" />
+        </div>
       </div>
     </div>
   );

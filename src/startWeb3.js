@@ -41,21 +41,21 @@ class Station {
           method: "wallet_addEthereumChain",
           params: [
             {
-              chainId: "0xa869",
-              chainName: "FUJI Testnet",
+              chainId: "0xa86a",
+              chainName: "AVAX Mainnet",
               nativeCurrency: {
                 name: "AVAX",
                 symbol: "AVAX", // 2-6 characters long
                 decimals: 18,
               },
-              rpcUrls: ["https://api.avax-test.network/ext/bc/C/rpc"],
-              blockExplorerUrls: ["https://cchain.explorer.avax-test.network/"],
+              rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+              blockExplorerUrls: ["https://snowtrace.io/"],
             },
           ],
         })
     this.accounts[0] = await ethersProvider.send("eth_requestAccounts", []);
-    this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x0b6cd869d9cd41eFFAcDe2651C129cd431A027FD', ABIlotto, signer)
+    this.contract = new ethers.Contract('0xF144A927d21FbF094747F8C00Da0D13b9D3782C9', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0x794D9112eDE255D1096Df2E75cE93205899313f1', ABIlotto, signer)
   }
 
   async loadContract() {
@@ -64,8 +64,8 @@ class Station {
     const signer = ethersProvider.getSigner();
     this.accounts = await ethersProvider.listAccounts();
 
-    this.contract = new ethers.Contract('0xE70F41944744855647eec543cdCe9Ee17DA676A1', ABI, signer)
-    this.contractLotto =  new ethers.Contract('0x0b6cd869d9cd41eFFAcDe2651C129cd431A027FD', ABIlotto, signer)
+    this.contract = new ethers.Contract('0xF144A927d21FbF094747F8C00Da0D13b9D3782C9', ABI, signer)
+    this.contractLotto =  new ethers.Contract('0x794D9112eDE255D1096Df2E75cE93205899313f1', ABIlotto, signer)
     console.log("contracts loaded")
   }
 
@@ -87,7 +87,7 @@ class Station {
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.reason,
+          text:e.data.message,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
@@ -127,9 +127,9 @@ class Station {
 
   async buyTicket(number,price) {
     try {
-    let price = '0.1';
+    let price = '0.5';
     const data = await this.haveConsole()
-    if(data === true) price = '0.06';
+    if(data === true) price = '0.35';
     await this.contractLotto.mint(1, number ,{value: ethers.utils.parseEther(price)}).then(transactionResponse => {
       transactionResponse.wait().then(receipt => {
          setTimeout(async() => { await this.getTotalTicketsArcadium(); await this.loadTickets();})
@@ -140,7 +140,7 @@ class Station {
       Swal.fire({
           title: 'Error',
           icon:'warning',
-          text:e.reason,
+          text:e.data.message,
           confirmButtonText: 'Ok',
           allowOutsideClick: false,
           confirmButtonColor: '#202020',
