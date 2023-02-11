@@ -24,6 +24,7 @@ class Station {
     this.accounts = [];
     this.tickets = [];
     this.ticketsArcadium = 0;
+    this.potArcadium = 0;
   }
 
   getAccount() {
@@ -154,6 +155,17 @@ class Station {
     this.ticketsArcadium = await this.contractLotto.totalSupply()
     const count = parseInt(this.ticketsArcadium)
     this.ticketsArcadium = count;
+
+    } catch (e) {
+      console.error(e.message, e);
+    }
+  }
+
+  async getPotArcadium() {
+    try {
+    this.potArcadium = await this.contractLotto.pot()
+    const pot = parseFloat(this.potArcadium).toFixed(2);
+    this.potArcadium = pot;
 
     } catch (e) {
       console.error(e.message, e);
