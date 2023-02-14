@@ -8,7 +8,7 @@ import avax from "../components/assets/avax.png";
 import Tickets from "../components/tickets";
 
 const Arcade = (props) => {
-  const [date] = useState(new Date("2023-02-17"));
+  const [date] = useState(new Date("2023-02-24"));
   const [countdown, setCountdown] = useState({});
   const [tickets, setTickets] = useState(0);
   const ref = useRef();
