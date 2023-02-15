@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import headerStyles from "./styles/header.module.scss";
 import logo from "./assets/logo.png";
+import NetworkSelect from "./networkSelect";
 
 export default function Header(props) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -68,6 +69,7 @@ export default function Header(props) {
               </li>
             </ul>
           </div>
+          <NetworkSelect />
           <button className={headerStyles.connectBtn} onClick={()=>{stations.connectWallet()}} >Connect Wallet</button>
         </nav>
       </div>
